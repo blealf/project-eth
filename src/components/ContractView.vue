@@ -25,12 +25,8 @@ const message = ref("");
 const balance = ref("");
 const defaultBlock = ref("");
 
-const web3 = new Web3(
-  "https://ropsten.infura.io/v3/71e3648d0d194f3db44a3427bbbef61e"
-);
-web3.eth.accounts.wallet.add(
-  "0x55d0380decced82a2198582e541a129e8b86937c30a1c51bbb5327b9f00c6aa4"
-);
+const web3 = new Web3(process.env.VUE_WEB3_URL);
+web3.eth.accounts.wallet.add(process.env.VUE_WEB3_PK);
 web3.eth
   .getBalance("0x86C12A724340f3F4F6142789808874d0A55Bd01f")
   .then((value) => (balance.value = Number(value)));
