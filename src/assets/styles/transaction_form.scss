@@ -1,0 +1,205 @@
+.form {
+  position: relative;
+  background: #e9e9eb;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5px 20px 10px 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px #eee;
+  color: #433f56;
+
+  h2 {
+    text-transform: uppercase;
+  }
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+
+  label {
+    margin-right: auto;
+  }
+}
+
+.error {
+  color: crimson;
+  font-size: 16px;
+}
+
+.success {
+  color: green;
+  font-size: 16px;
+}
+
+.status {
+  position: relative;
+  opacity: 0;
+  background: #eee;
+  padding: 18px 10px 10px 10px;
+  position: absolute;
+  top: 180;
+  right: 10px;
+  left: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  clip-path: polygon(0% 0%, 100% 0%, 99% 100%, 1% 100%);
+  transition: opacity 500ms ease-out;
+  // animation: animateStatus 3s ease-out;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #000;
+  cursor: pointer;
+}
+
+@keyframes animateStatus {
+  0% {
+    opacity: 1;
+    top: 200;
+  }
+
+  10% {
+    opacity: 0.9;
+    top: 180;
+  }
+
+  20% {
+    opacity: 0.8;
+    top: 160;
+  }
+
+  30% {
+    opacity: 0.7;
+    top: 140;
+  }
+
+  40% {
+    opacity: 0.6;
+    top: 120;
+  }
+
+  50% {
+    opacity: 0.5;
+    top: 100;
+  }
+
+  60% {
+    opacity: 0.6;
+    top: 80;
+  }
+
+  70% {
+    opacity: 0.5;
+    top: 60;
+  }
+
+  80% {
+    opacity: 0.5;
+    top: 40;
+  }
+
+  90% {
+    opacity: 0.5;
+    top: 20;
+  }
+
+  100% {
+    opacity: 0;
+    top: 0;
+  }
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  input {
+    height: 20px;
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: 433F56;
+    border-width: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    outline: none;
+    font-size: 20px;
+    clip-path: polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%);
+  }
+}
+
+.btn {
+  padding: 10px 25px;
+  font-size: 20px;
+  background-color: #433f56;
+  color: #eee;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+  margin-left: auto;
+  clip-path: polygon(2% 0%, 98% 0%, 100% 50%, 98% 100%, 2% 100%, 0% 50%);
+  animation-name: animatebtn;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite;
+  cursor: pointer;
+
+  &:hover {
+    animation: none;
+  }
+}
+
+icon {
+  color: #eee;
+  background: #433f56;
+}
+
+@keyframes animatebtn {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0.5deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-0.5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .form-group {
+    flex-direction: column;
+
+    label {
+      margin: auto;
+    }
+
+    input {
+      width: 100%;
+      margin-top: 5px;
+    }
+  }
+
+  .btn {
+    width: 230px;
+  }
+}
